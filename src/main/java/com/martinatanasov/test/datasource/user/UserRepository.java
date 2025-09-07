@@ -16,6 +16,7 @@ public class UserRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    // Get all users from the database via JDBC driver
     public List<UserDTO> findAllUsers() {
         return jdbcTemplate.query(
                 sql,

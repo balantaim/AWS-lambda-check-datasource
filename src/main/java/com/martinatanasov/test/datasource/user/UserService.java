@@ -13,6 +13,7 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
+    // Get all users from the User repository
     public List<UserDTO> getAllUsers() {
         return userRepository.findAllUsers();
     }

@@ -21,6 +21,7 @@ public class UserController {
         this.userService = userService;
     }
 
+    // Get all users as JSON response
     @RequestMapping(path = "/users", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON)
     public ResponseEntity<List<UserDTO>> getUsersInfo() {
         List<UserDTO> users = userService.getAllUsers();

@@ -34,9 +34,17 @@ Endpoint: `/users`
 
 ## Setup
 
-Create the project via Maven archetype for Spring boot 3:
+Create the project:
 
-`com.amazonaws.serverless.archetypes:aws-serverless-springboot3-archetype`
+1. Create via dedicated IDE and Maven archetype: `com.amazonaws.serverless.archetypes:aws-serverless-springboot3-archetype`
+
+2. Create via bash command:
+```bash
+mvn archetype:generate -DgroupId=my.service -DartifactId=my-service -Dversion=1.0-SNAPSHOT \
+       -DarchetypeGroupId=com.amazonaws.serverless.archetypes \
+       -DarchetypeArtifactId=aws-serverless-springboot3-archetype \
+       -DarchetypeVersion=2.0.1
+```
 
 Deploy the Lambda function with runtime
 
