@@ -14,7 +14,7 @@ public class UserService {
     }
 
     // Get all users from the User repository
-    public List<UserDTO> getAllUsers() {
+    public List<UserDto> getAllUsers() {
         return userRepository.findAllUsers();
     }
 

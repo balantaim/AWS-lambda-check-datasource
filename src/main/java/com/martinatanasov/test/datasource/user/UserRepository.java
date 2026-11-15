@@ -17,10 +17,10 @@ public class UserRepository {
     }
 
     // Get all users from the database via JDBC driver
-    public List<UserDTO> findAllUsers() {
+    public List<UserDto> findAllUsers() {
         return jdbcTemplate.query(
                 sql,
-                (rs, rowNum) -> new UserDTO(
+                (rs, rowNum) -> new UserDto(
                         rs.getLong("id"),
                         rs.getString("email"),
                         rs.getString("first_name"),

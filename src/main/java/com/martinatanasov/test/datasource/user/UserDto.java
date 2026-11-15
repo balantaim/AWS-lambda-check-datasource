@@ -4,7 +4,7 @@ package com.martinatanasov.test.datasource.user;
 import java.sql.Timestamp;
 
 
-public record UserDTO(
+public record UserDto(
         Long id,
         String email,
         String firstName,

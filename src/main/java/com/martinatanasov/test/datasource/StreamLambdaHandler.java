@@ -26,8 +26,52 @@ public class StreamLambdaHandler implements RequestStreamHandler {
     }
 
     @Override
-    public void handleRequest(InputStream inputStream, OutputStream outputStream, Context context)
-            throws IOException {
+    public void handleRequest(InputStream inputStream,
+                              OutputStream outputStream,
+                              Context context) throws IOException {
         handler.proxyStream(inputStream, outputStream, context);
     }
+
+    /**
+     * Example that copy and logs the inputStream
+     */
+
+//    @Override
+//    public void handleRequest(InputStream inputStream,
+//                              OutputStream outputStream,
+//                              Context context) throws IOException {
+//        LambdaLogger logger = context.getLogger();
+//
+//        // Read and copy the incoming request
+//        ByteArrayOutputStream requestBuffer = new ByteArrayOutputStream();
+//        inputStream.transferTo(requestBuffer);
+//
+//        byte[] requestBytes = requestBuffer.toByteArray();
+//
+//        logger.log("INCOMING REQUEST: " + new String(requestBytes, StandardCharsets.UTF_8));
+//
+//        // Process the request
+//        ByteArrayOutputStream responseBuffer = new ByteArrayOutputStream();
+//
+//        try {
+//            handler.proxyStream(
+//                    new ByteArrayInputStream(requestBytes),
+//                    responseBuffer,
+//                    context
+//            );
+//
+//            // Copy response to the original output stream
+//            byte[] responseBytes = responseBuffer.toByteArray();
+//
+//            logger.log("OUTGOING RESPONSE: " + new String(responseBytes, StandardCharsets.UTF_8));
+//
+//            outputStream.write(responseBytes);
+//            outputStream.flush();
+//
+//        } catch (Exception e) {
+//            logger.log("ERROR PROCESSING REQUEST: " + e.getMessage());
+//            throw e;
+//        }
+//    }
+
 }

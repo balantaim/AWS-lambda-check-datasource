@@ -8,7 +8,7 @@
 
     <groupId>com.martinatanasov.test.datasource</groupId>
     <artifactId>AWS-lambda-check-datasource</artifactId>
-    <version>1.1</version>
+    <version>1.2</version>
     <packaging>jar</packaging>
 
     <name>Serverless Spring Boot 3 API</name>

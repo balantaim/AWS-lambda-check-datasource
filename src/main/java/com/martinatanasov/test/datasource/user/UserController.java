@@ -23,8 +23,8 @@ public class UserController {
 
     // Get all users as JSON response
     @RequestMapping(path = "/users", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON)
-    public ResponseEntity<List<UserDTO>> getUsersInfo() {
-        List<UserDTO> users = userService.getAllUsers();
+    public ResponseEntity<List<UserDto>> getUsersInfo() {
+        List<UserDto> users = userService.getAllUsers();
         if (users.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
